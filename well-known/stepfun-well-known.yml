@@ -1,0 +1,54 @@
+generated: '2026-07-21'
+method: searched
+description: >-
+  Results of probing the /.well-known/ discovery surface for the StepFun hosts
+  (website, developer platform, and API). Status is the HTTP code observed at
+  fetch time. stepfun.com answers 308 (redirect to www.stepfun.com) for every
+  path; no host published any well-known document. The Mintlify-hosted docs do
+  publish /docs/llms.txt and /docs/llms-full.txt (captured in llms/).
+hosts:
+  - host: https://stepfun.com
+    note: 308 permanent redirect to https://www.stepfun.com for all paths
+    documents:
+      - path: /.well-known/security.txt
+        status: 308
+      - path: /.well-known/openid-configuration
+        status: 308
+      - path: /.well-known/oauth-authorization-server
+        status: 308
+      - path: /.well-known/api-catalog
+        status: 308
+      - path: /.well-known/ai-plugin.json
+        status: 308
+  - host: https://www.stepfun.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+  - host: https://platform.stepfun.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /docs/llms.txt
+        status: 200
+        type: text/plain
+        file: ../llms/stepfun-llms.txt
+  - host: https://api.stepfun.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404

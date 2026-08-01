@@ -1,26 +1,239 @@
 aid: stepfun
 name: StepFun
-description: 'StepFun is a company surfaced as a portfolio company of qiming and added to the API Evangelist
-  network as a stub for enrichment. Sector: ai. This profile is a lead awaiting the enrichment pipeline.'
+description: >-
+  StepFun (阶跃星辰) is a Shanghai-based AI foundation-model company whose open
+  platform serves the Step model family — multimodal reasoning (step-3.7-flash),
+  fast language reasoning (step-3.5-flash), vision, image generation and
+  editing (step-2x-large, step-image-edit-2), and a deep audio stack spanning
+  TTS, voice cloning, ASR, and end-to-end realtime voice (StepAudio 2.5) — via
+  an OpenAI-compatible REST API at api.stepfun.com, an Anthropic-compatible
+  Messages API, WebSocket realtime channels, and a hosted StepSearch MCP
+  server for agent clients.
 url: https://raw.githubusercontent.com/api-evangelist/stepfun/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - qiming
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: enriched
+x-tier-reason: live-api-provider
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
-- Company
-- Ai
-apis: []
+- AI
+- Artificial Intelligence
+- LLM
+- Multimodal
+- Chat Completion
+- Audio
+- Speech
+- Text to Speech
+- Speech Recognition
+- Images
+- Realtime
+- Vector Stores
+- China
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/stepfun.png
+apis:
+- aid: stepfun:chat-completions-api
+  name: StepFun Chat Completions API
+  description: >-
+    OpenAI-compatible chat completions for the Step model family (e.g.
+    step-3.7-flash, step-3.5-flash, stepaudio-2.5-chat), with multimodal
+    image/video/audio message parts, tool calling, JSON mode, streaming via
+    SSE, reasoning output, and prompt caching with discounted cache-hit pricing.
+  humanURL: https://platform.stepfun.com/docs/zh/api-reference/chat/chat-completion-create
+  baseURL: https://api.stepfun.com
+  tags: [AI, LLM, Chat Completion, Multimodal, Tool Calling]
+  properties:
+  - type: Documentation
+    url: https://platform.stepfun.com/docs/zh/api-reference/chat/chat-completion-create
+- aid: stepfun:messages-api
+  name: StepFun Messages API
+  description: >-
+    Anthropic Messages API-compatible endpoint (POST /v1/messages) that lets
+    the Anthropic SDK and Claude-style JSON structures run against Step models
+    by pointing base_url at https://api.stepfun.com.
+  humanURL: https://platform.stepfun.com/docs/zh/api-reference/chat/messages-create
+  baseURL: https://api.stepfun.com
+  tags: [AI, LLM, Messages, Anthropic Compatible]
+  properties:
+  - type: Documentation
+    url: https://platform.stepfun.com/docs/zh/api-reference/chat/messages-create
+- aid: stepfun:responses-api
+  name: StepFun Responses API
+  description: >-
+    OpenAI Responses API-style endpoint for generating model responses on the
+    StepFun open platform.
+  humanURL: https://platform.stepfun.com/docs/zh/api-reference/responses/responses-create
+  baseURL: https://api.stepfun.com
+  tags: [AI, LLM, Responses]
+  properties:
+  - type: Documentation
+    url: https://platform.stepfun.com/docs/zh/api-reference/responses/responses-create
+- aid: stepfun:models-api
+  name: StepFun Models API
+  description: List available Step models, retrieve a single model, and inspect the model object.
+  humanURL: https://platform.stepfun.com/docs/zh/api-reference/models/list
+  baseURL: https://api.stepfun.com
+  tags: [AI, Models, Catalog]
+  properties:
+  - type: Documentation
+    url: https://platform.stepfun.com/docs/zh/api-reference/models/list
+- aid: stepfun:audio-api
+  name: StepFun Audio API
+  description: >-
+    Speech synthesis (TTS), voice cloning with preview, official voice
+    catalog, audio transcription, and file-based / streaming speech
+    recognition (ASR) across the StepAudio 2.5 and step-tts model families.
+  humanURL: https://platform.stepfun.com/docs/zh/api-reference/audio/create-audio
+  baseURL: https://api.stepfun.com
+  tags: [Audio, Text to Speech, Speech Recognition, Voice Cloning]
+  properties:
+  - type: Documentation
+    url: https://platform.stepfun.com/docs/zh/api-reference/audio/create-audio
+- aid: stepfun:realtime-api
+  name: StepFun Realtime API
+  description: >-
+    Bidirectional realtime voice over WebSocket (wss://api.stepfun.com/v1/realtime)
+    with OpenAI Realtime-style session, conversation, and response events, plus
+    a streaming TTS channel at /v1/realtime/audio.
+  humanURL: https://platform.stepfun.com/docs/zh/api-reference/realtime/chat
+  baseURL: https://api.stepfun.com
+  tags: [Audio, Realtime, WebSocket, Voice]
+  properties:
+  - type: Documentation
+    url: https://platform.stepfun.com/docs/zh/api-reference/realtime/chat
+  - type: AsyncAPI
+    url: asyncapi/stepfun-realtime-asyncapi.yml
+- aid: stepfun:images-api
+  name: StepFun Images API
+  description: >-
+    Image generation, image editing, and image-to-image endpoints for the
+    step-2x-large and step-image-edit-2 models.
+  humanURL: https://platform.stepfun.com/docs/zh/api-reference/images/image
+  baseURL: https://api.stepfun.com
+  tags: [Images, Image Generation, Image Editing]
+  properties:
+  - type: Documentation
+    url: https://platform.stepfun.com/docs/zh/api-reference/images/image
+- aid: stepfun:files-api
+  name: StepFun Files API
+  description: Upload, list, retrieve, delete files and fetch file content for use with Step models and knowledge bases.
+  humanURL: https://platform.stepfun.com/docs/zh/api-reference/files/create
+  baseURL: https://api.stepfun.com
+  tags: [Files, Storage]
+  properties:
+  - type: Documentation
+    url: https://platform.stepfun.com/docs/zh/api-reference/files/create
+- aid: stepfun:vector-stores-api
+  name: StepFun Vector Stores API
+  description: >-
+    Knowledge-base (vector store) management — create/list/retrieve/delete
+    stores and attach or remove files for retrieval-augmented generation.
+  humanURL: https://platform.stepfun.com/docs/zh/api-reference/vector-stores/create
+  baseURL: https://api.stepfun.com
+  tags: [Vector Stores, RAG, Knowledge Base]
+  properties:
+  - type: Documentation
+    url: https://platform.stepfun.com/docs/zh/api-reference/vector-stores/create
+- aid: stepfun:web-search-api
+  name: StepFun Web Search API
+  description: Web search and text-to-image search endpoints (POST /v1/search) billed per call as value-added capabilities.
+  humanURL: https://platform.stepfun.com/docs/zh/api-reference/search/search
+  baseURL: https://api.stepfun.com
+  tags: [Search, Web Search]
+  properties:
+  - type: Documentation
+    url: https://platform.stepfun.com/docs/zh/api-reference/search/search
+- aid: stepfun:token-count-api
+  name: StepFun Token Count API
+  description: Pre-count prompt tokens for a model request (POST /v1/token/count) to estimate usage and cost.
+  humanURL: https://platform.stepfun.com/docs/zh/api-reference/token-count
+  baseURL: https://api.stepfun.com
+  tags: [Tokens, Utility]
+  properties:
+  - type: Documentation
+    url: https://platform.stepfun.com/docs/zh/api-reference/token-count
+- aid: stepfun:accounts-api
+  name: StepFun Accounts API
+  description: Retrieve account information including balances (GET /v1/accounts).
+  humanURL: https://platform.stepfun.com/docs/zh/api-reference/accounts/get
+  baseURL: https://api.stepfun.com
+  tags: [Accounts, Billing]
+  properties:
+  - type: Documentation
+    url: https://platform.stepfun.com/docs/zh/api-reference/accounts/get
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/stepfun-domain-security.yml
 - type: Website
-  url: https://stepfun.com
+  url: https://www.stepfun.com
+- type: DeveloperPortal
+  url: https://platform.stepfun.com
+- type: Documentation
+  url: https://platform.stepfun.com/docs
+- type: APIReference
+  url: https://platform.stepfun.com/docs/zh/api-reference/chat/chat-completion-create
+- type: GettingStarted
+  url: https://platform.stepfun.com/docs/zh/quickstart/overview
+- type: Support
+  url: https://platform.stepfun.com/docs/zh/guides/contact-us
+- type: GitHubOrganization
+  url: https://github.com/stepfun-ai
+- type: Pricing
+  url: https://platform.stepfun.com/docs/zh/guides/pricing/details
+- type: SignUp
+  url: https://platform.stepfun.com
+- type: TermsOfService
+  url: https://platform.stepfun.com/docs/zh/agreement/userservice
+- type: PrivacyPolicy
+  url: https://platform.stepfun.com/docs/zh/agreement/userprivacy
+- type: LLMsTxt
+  url: llms/stepfun-llms.txt
+- type: WellKnown
+  url: well-known/stepfun-well-known.yml
+- type: MCPServer
+  url: mcp/stepfun-mcp.yml
+- type: ErrorCatalog
+  url: errors/stepfun-error-codes.yml
+- type: RateLimits
+  url: rate-limits/stepfun-rate-limits.yml
+- type: Conventions
+  url: conventions/stepfun-conventions.yml
+- type: Authentication
+  url: authentication/stepfun-authentication.yml
+- type: Conformance
+  url: conformance/stepfun-conformance.yml
+- type: Lifecycle
+  url: lifecycle/stepfun-lifecycle.yml
+- type: Deprecation
+  url: https://platform.stepfun.com/docs/zh/guides/model-migration
+- type: Packages
+  url: packages/stepfun-packages.yml
+- type: SDKs
+  url: packages/stepfun-packages.yml
+- type: AsyncAPI
+  url: asyncapi/stepfun-realtime-asyncapi.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 12
+  pass: local-v1

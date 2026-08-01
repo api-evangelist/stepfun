@@ -1,0 +1,52 @@
+generated: '2026-07-21'
+method: searched
+source: https://platform.stepfun.com/docs/zh/api-reference/error-codes
+format: http-status
+description: >-
+  StepFun's published API error-code reference. Errors are returned as an
+  OpenAI-style JSON envelope { "error": { "message", "type" } } with the HTTP
+  status carrying the error class (observed live: a request with a bad key
+  returns 401 with type "invalid_api_key"). Not RFC 9457 problem+json.
+  Descriptions and remediation translated from the Chinese reference page.
+envelope:
+  shape: '{ "error": { "message": string, "type": string } }'
+  example: '{"error":{"message":"Incorrect API key provided","type":"invalid_api_key"}}'
+  rfc9457: false
+problems:
+  - status: 400
+    title: Invalid request parameters
+    detail: >-
+      Request parameter format is incorrect. Possible causes: image could not
+      be downloaded; image count exceeds the limit; the model does not support
+      video input; model does not exist or no permission; illegal parameter value.
+    remediation: Pass parameters exactly as documented.
+  - status: 401
+    title: Invalid authentication
+    detail: Authentication is invalid.
+    remediation: Make sure the correct API key is used.
+  - status: 402
+    title: Insufficient balance
+    detail: Account balance is insufficient.
+    remediation: Ensure the account has enough balance.
+  - status: 404
+    title: Incorrect request path
+    detail: The request path is not correct.
+    remediation: Fix the request path per the documentation.
+  - status: 429
+    title: Rate limit exceeded
+    detail: >-
+      Requested resource is over the limit — likely requests were sent too
+      fast, exceeding the rate limit.
+    remediation: Retry the request after a short wait.
+  - status: 451
+    title: Content moderation failure
+    detail: The request or response content did not pass moderation review.
+    remediation: Modify the request content and retry.
+  - status: 500
+    title: Server error
+    detail: A problem on StepFun's servers.
+    remediation: Retry after a moment; contact StepFun if the problem persists.
+  - status: 503
+    title: Server overloaded
+    detail: The server is currently under too much load.
+    remediation: Retry the request after a short wait.

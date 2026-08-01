@@ -1,0 +1,93 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  https://platform.stepfun.com/docs — cross-cutting request/response semantics
+  gathered from the quickstart, API reference (chat completions, Messages,
+  Responses, token count), error-codes, prompt-cache guide, and pricing/rate
+  limit pages.
+description: >-
+  How the StepFun open-platform API behaves across operations: OpenAI-compatible
+  REST surface (plus an Anthropic-compatible Messages API), Bearer API-key
+  authentication, SSE streaming, prompt caching with discounted cache-hit
+  pricing, token-based usage accounting, an OpenAI-style error envelope, and
+  top-up-tiered rate limits.
+
+base_url: https://api.stepfun.com/v1
+api_style: REST over HTTPS, JSON requests/responses, OpenAI-compatible; WebSocket for realtime audio
+
+compatibility:
+  openai: >-
+    The core surface (chat/completions, models, files, images, audio,
+    responses) follows the OpenAI API shapes; the docs' quickstart officially
+    instructs reuse of the OpenAI SDK with base_url https://api.stepfun.com/v1.
+  anthropic: >-
+    POST /v1/messages is compatible with the Anthropic Messages API format;
+    the Anthropic SDK works with base_url https://api.stepfun.com.
+  step_plan: >-
+    Step Plan subscription traffic uses the parallel prefix
+    https://api.stepfun.com/step_plan/v1/... with the same shapes.
+
+authentication:
+  scheme: Bearer API key (Authorization header)
+  key_console: https://platform.stepfun.com/interface-key
+  docs: https://platform.stepfun.com/docs/zh/quickstart/overview
+  detail: authentication/stepfun-authentication.yml
+
+idempotency:
+  supported: false
+  notes: No idempotency-key mechanism is documented.
+
+pagination:
+  style: openai-list
+  notes: >-
+    List endpoints (files, vector stores, voices) return OpenAI-style list
+    objects; the docs do not document a cross-cutting cursor contract.
+
+streaming:
+  supported: true
+  mechanism: 'stream: true returns Server-Sent Events chunks (OpenAI delta format); reasoning models stream thinking deltas'
+  realtime: >-
+    Bidirectional realtime voice over WebSocket at wss://api.stepfun.com/v1/realtime
+    (OpenAI Realtime-style session/conversation/response events) and streaming
+    TTS at wss://api.stepfun.com/v1/realtime/audio.
+  detail: asyncapi/stepfun-realtime-asyncapi.yml
+
+prompt_caching:
+  supported: true
+  notes: >-
+    Automatic prompt caching with separate, discounted cache-hit input pricing
+    (e.g. step-3.7-flash ¥1.35/M tokens uncached vs ¥0.27/M cached).
+  docs: https://platform.stepfun.com/docs/zh/guides/developer/prompt-cache
+
+usage_accounting:
+  mechanism: >-
+    Responses carry usage.prompt_tokens, usage.completion_tokens and
+    usage.total_tokens; billing is token-metered per model. A dedicated
+    POST /v1/token/count endpoint pre-counts tokens.
+  docs: https://platform.stepfun.com/docs/zh/guides/pricing/intro
+
+versioning:
+  scheme: uri-path
+  current: v1
+  notes: All endpoints live under /v1 (or /step_plan/v1); no date-based versioning documented.
+
+error_envelope:
+  media_type: application/json
+  rfc9457: false
+  shape: '{ "error": { "message", "type" } }'
+  detail: errors/stepfun-error-codes.yml
+  docs: https://platform.stepfun.com/docs/zh/api-reference/error-codes
+
+rate_limits:
+  signal_status: 429
+  model: cumulative top-up tiers V0-V5 (concurrency / RPM / TPM)
+  detail: rate-limits/stepfun-rate-limits.yml
+  docs: https://platform.stepfun.com/docs/zh/guides/pricing/details
+
+other_conventions:
+  - name: Content moderation
+    detail: HTTP 451 is returned when request or response content fails moderation review.
+  - name: Balance gating
+    detail: HTTP 402 is returned when the account balance is insufficient; GET /v1/accounts reports balance.
+  - name: Model deprecation
+    detail: Models are retired on announced dates with named replacement model IDs; see lifecycle/stepfun-lifecycle.yml.

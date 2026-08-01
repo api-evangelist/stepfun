@@ -1,0 +1,25 @@
+generated: '2026-07-21'
+method: searched
+docs: https://platform.stepfun.com/docs/zh/quickstart/overview
+source: >-
+  StepFun open-platform quickstart and API reference. No OpenAPI is published
+  (the docs' openapi.json is the Mintlify placeholder), so this profile is
+  captured from the documentation rather than derived from a spec.
+summary:
+  types: [http-bearer-api-key]
+  api_key_in: [header]
+  oauth2_flows: []
+schemes:
+  - name: bearerAuth
+    type: http
+    scheme: bearer
+    description: >-
+      Platform API key sent as "Authorization: Bearer <STEP_API_KEY>" on every
+      request (REST and WebSocket). Keys are issued in the platform console
+      under 接口密钥 (interface keys). The same key authorizes the StepSearch
+      hosted MCP server. OpenAI/Anthropic SDKs pass it as their api_key with
+      base_url pointed at https://api.stepfun.com.
+    key_console: https://platform.stepfun.com/interface-key
+notes:
+  - No OAuth 2.0, OIDC, or scoped-permission surface is documented; access is all-or-nothing per API key.
+  - Step Plan subscription traffic authenticates the same way against the /step_plan/v1 prefix.

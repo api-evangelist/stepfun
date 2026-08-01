@@ -1,0 +1,41 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  npm, PyPI, Maven Central and the stepfun-ai GitHub org searched 2026-07-21.
+  StepFun ships no first-party packages on the public registries — the
+  quickstart officially instructs reusing the OpenAI SDK (and the Anthropic
+  SDK for /v1/messages) against api.stepfun.com. First-party client code is
+  distributed from the stepfun-ai GitHub org.
+packages:
+  - language: kotlin
+    registry: github
+    name: stepfunApi-audio-sdk
+    url: https://github.com/stepfun-ai/stepfunApi-audio-sdk
+    install: 'clone https://github.com/stepfun-ai/stepfunApi-audio-sdk (not published to Maven Central)'
+    official: true
+    description: >-
+      Android voice SDK built on the StepFun open-platform audio APIs —
+      streaming and non-streaming TTS, ASR (streaming and non-streaming),
+      audio player, and voice recording.
+  - language: typescript
+    registry: github
+    name: Step-Realtime-CLI
+    url: https://github.com/stepfun-ai/Step-Realtime-CLI
+    install: 'clone https://github.com/stepfun-ai/Step-Realtime-CLI (not published to npm)'
+    official: true
+    description: First-party CLI client for the StepFun realtime voice WebSocket API.
+  - language: python
+    registry: github
+    name: Step-Realtime-Python-Demo
+    url: https://github.com/stepfun-ai/Step-Realtime-Python-Demo
+    install: 'clone https://github.com/stepfun-ai/Step-Realtime-Python-Demo'
+    official: true
+    description: First-party Python demo client for the StepFun realtime API.
+compatible_sdks:
+  - name: openai (PyPI/npm)
+    notes: 'Officially documented: OpenAI SDK with base_url https://api.stepfun.com/v1.'
+  - name: anthropic (PyPI/npm)
+    notes: 'Officially documented: Anthropic SDK with base_url https://api.stepfun.com for /v1/messages.'
+not_first_party:
+  - '@stepfun-ai/cli on npm is a personal project (github.com/janssenkm/stepfun-cli), not published by StepFun.'
+  - 'stepfun-mcp, stepfun-cli, stepfun-status on npm are community packages.'

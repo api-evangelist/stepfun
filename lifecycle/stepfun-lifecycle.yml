@@ -1,0 +1,40 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  https://platform.stepfun.com/docs/zh/guides/model-migration (dated model
+  retirements + replacements), https://platform.stepfun.com/docs/zh/step-plan/upgrade-notice,
+  pricing/limits page; status.stepfun.com probed unreachable 2026-07-21.
+versioning:
+  scheme: uri-path
+  current: v1
+  notes: >-
+    All endpoints are under /v1 (Step Plan under /step_plan/v1). Change is
+    managed at the model level (new model IDs such as step-3.5-flash-2603)
+    rather than by API version.
+deprecation:
+  policy_url: https://platform.stepfun.com/docs/zh/guides/model-migration
+  sunset_header: false
+  notes: >-
+    Models are retired on announced dates with recommended replacement model
+    IDs. Example: on 2026-07-08 step-1-8k/32k, step-1v-8k/32k, step-2-mini,
+    step-2-16k, step-1o-vision-32k (→ step-1o-turbo-vision), step-3
+    (→ step-3.7-flash) and step-1x-medium (→ step-2x-large) were retired.
+    Migration is a model-field swap; no RFC 8594 Sunset/Deprecation headers
+    are documented.
+sla:
+  url: null
+  public_uptime_target: null
+status_page: null
+notes:
+  - No public status page found (status.stepfun.com does not resolve).
+  - Free-promo endings are announced with dates on the pricing page (e.g. step-2x-large ended free tier 2026-06-12).
+deprecated_models:
+  - step-1-8k
+  - step-1-32k
+  - step-1v-8k
+  - step-1v-32k
+  - step-2-mini
+  - step-2-16k
+  - step-1o-vision-32k
+  - step-3
+  - step-1x-medium

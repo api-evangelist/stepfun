@@ -1,0 +1,47 @@
+generated: '2026-07-21'
+method: searched
+source: https://platform.stepfun.com/docs
+description: >-
+  Industry / cross-cutting standards conformance for the StepFun open-platform
+  API, asserted from the published documentation (no OpenAPI is published to
+  derive from). StepFun's key conformance story is de-facto AI-API standards:
+  OpenAI API compatibility for the core surface and Anthropic Messages API
+  compatibility for /v1/messages.
+standards:
+  - id: openai-api-compatibility
+    conforms: true
+    evidence: >-
+      Quickstart officially instructs using the OpenAI SDK against
+      https://api.stepfun.com/v1; chat/completions, models, files, images,
+      audio and responses follow OpenAI shapes
+      (https://platform.stepfun.com/docs/zh/guides/developer/openai documents
+      migration from OpenAI).
+  - id: anthropic-messages-compatibility
+    conforms: true
+    evidence: >-
+      POST /v1/messages is documented as compatible with the Anthropic
+      Messages API format and directly usable with the Anthropic SDK
+      (https://platform.stepfun.com/docs/zh/api-reference/chat/messages-create).
+  - id: model-context-protocol
+    conforms: true
+    evidence: >-
+      Official hosted StepSearch MCP server at
+      https://api.stepfun.com/step_plan/v1/mcp/web_search/mcp
+      (https://platform.stepfun.com/docs/zh/step-plan/integrations/search-mcp).
+  - id: sse-streaming
+    conforms: true
+    evidence: 'stream: true returns Server-Sent Events in OpenAI delta format.'
+  - id: oauth2
+    conforms: false
+    evidence: Only Bearer API-key auth is documented; no OAuth 2.0 flows.
+  - id: oidc
+    conforms: false
+    evidence: No /.well-known/openid-configuration on any host (probed 2026-07-21, 404).
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: >-
+      Errors use an OpenAI-style { error: { message, type } } JSON envelope,
+      not application/problem+json (see errors/stepfun-error-codes.yml).
+  - id: rfc9116-security-txt
+    conforms: false
+    evidence: /.well-known/security.txt returns 404 on www, platform, and api hosts (probed 2026-07-21).

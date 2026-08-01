@@ -1,0 +1,31 @@
+generated: '2026-07-21'
+method: searched
+status: published
+source: https://platform.stepfun.com/docs/zh/step-plan/integrations/search-mcp
+description: >-
+  StepFun operates an official hosted remote MCP server, StepSearch — a search
+  service built on the Model Context Protocol that gives Claude Code, Cline,
+  OpenCode, Goose, and other MCP-compatible clients access to StepFun's web
+  search and web fetch capabilities. It is an HTTP (streamable) remote server
+  authenticated with the platform API key as a Bearer token; no local install
+  is required. Tool list captured verbatim from the StepSearch documentation.
+server:
+  name: stepsearch
+  transport: http
+  url: https://api.stepfun.com/step_plan/v1/mcp/web_search/mcp
+  auth: bearer-api-key
+  auth_header: 'Authorization: Bearer <STEPFUN_API_KEY>'
+  key_console: https://platform.stepfun.com/interface-key
+tools:
+  - name: web_search
+    description: Web-wide information retrieval with indexed results output.
+  - name: web_fetch
+    description: Fetch a specified URL and extract its page content in structured form.
+clients_documented:
+  - Claude Code
+  - Cline
+  - OpenCode
+  - Goose
+  - Kilo Code
+  - Roo Code
+  - Zed
