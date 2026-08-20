@@ -32,6 +32,19 @@ specificationVersion: '0.23'
 created: '2026-07-17'
 modified: '2026-07-21'
 tags:
+- Artificial Intelligence
+- LLM
+- Multi-Modal
+- Chat Completion
+- Audio
+- Speech
+- Text-to-Speech
+- Speech Recognition
+- Image
+- Real-Time
+- Vector Stores
+- China
+tags_raw:
 - AI
 - Artificial Intelligence
 - LLM
@@ -56,7 +69,18 @@ apis:
     SSE, reasoning output, and prompt caching with discounted cache-hit pricing.
   humanURL: https://platform.stepfun.com/docs/zh/api-reference/chat/chat-completion-create
   baseURL: https://api.stepfun.com
-  tags: [AI, LLM, Chat Completion, Multimodal, Tool Calling]
+  tags:
+  - Artificial Intelligence
+  - LLM
+  - Chat Completion
+  - Multi-Modal
+  - Tool Calling
+  tags_raw:
+  - AI
+  - LLM
+  - Chat Completion
+  - Multimodal
+  - Tool Calling
   properties:
   - type: Documentation
     url: https://platform.stepfun.com/docs/zh/api-reference/chat/chat-completion-create
@@ -68,7 +92,16 @@ apis:
     by pointing base_url at https://api.stepfun.com.
   humanURL: https://platform.stepfun.com/docs/zh/api-reference/chat/messages-create
   baseURL: https://api.stepfun.com
-  tags: [AI, LLM, Messages, Anthropic Compatible]
+  tags:
+  - Artificial Intelligence
+  - LLM
+  - Message
+  - Anthropic Compatible
+  tags_raw:
+  - AI
+  - LLM
+  - Messages
+  - Anthropic Compatible
   properties:
   - type: Documentation
     url: https://platform.stepfun.com/docs/zh/api-reference/chat/messages-create
@@ -79,7 +112,14 @@ apis:
     StepFun open platform.
   humanURL: https://platform.stepfun.com/docs/zh/api-reference/responses/responses-create
   baseURL: https://api.stepfun.com
-  tags: [AI, LLM, Responses]
+  tags:
+  - Artificial Intelligence
+  - LLM
+  - Responses
+  tags_raw:
+  - AI
+  - LLM
+  - Responses
   properties:
   - type: Documentation
     url: https://platform.stepfun.com/docs/zh/api-reference/responses/responses-create
@@ -88,7 +128,14 @@ apis:
   description: List available Step models, retrieve a single model, and inspect the model object.
   humanURL: https://platform.stepfun.com/docs/zh/api-reference/models/list
   baseURL: https://api.stepfun.com
-  tags: [AI, Models, Catalog]
+  tags:
+  - Artificial Intelligence
+  - Models
+  - Catalog
+  tags_raw:
+  - AI
+  - Models
+  - Catalog
   properties:
   - type: Documentation
     url: https://platform.stepfun.com/docs/zh/api-reference/models/list
@@ -100,7 +147,16 @@ apis:
     recognition (ASR) across the StepAudio 2.5 and step-tts model families.
   humanURL: https://platform.stepfun.com/docs/zh/api-reference/audio/create-audio
   baseURL: https://api.stepfun.com
-  tags: [Audio, Text to Speech, Speech Recognition, Voice Cloning]
+  tags:
+  - Audio
+  - Text-to-Speech
+  - Speech Recognition
+  - Voice Cloning
+  tags_raw:
+  - Audio
+  - Text to Speech
+  - Speech Recognition
+  - Voice Cloning
   properties:
   - type: Documentation
     url: https://platform.stepfun.com/docs/zh/api-reference/audio/create-audio
@@ -112,7 +168,16 @@ apis:
     a streaming TTS channel at /v1/realtime/audio.
   humanURL: https://platform.stepfun.com/docs/zh/api-reference/realtime/chat
   baseURL: https://api.stepfun.com
-  tags: [Audio, Realtime, WebSocket, Voice]
+  tags:
+  - Audio
+  - Real-Time
+  - WebSocket
+  - Voice
+  tags_raw:
+  - Audio
+  - Realtime
+  - WebSocket
+  - Voice
   properties:
   - type: Documentation
     url: https://platform.stepfun.com/docs/zh/api-reference/realtime/chat
@@ -125,7 +190,14 @@ apis:
     step-2x-large and step-image-edit-2 models.
   humanURL: https://platform.stepfun.com/docs/zh/api-reference/images/image
   baseURL: https://api.stepfun.com
-  tags: [Images, Image Generation, Image Editing]
+  tags:
+  - Image
+  - Image-Generation
+  - Image Editing
+  tags_raw:
+  - Images
+  - Image Generation
+  - Image Editing
   properties:
   - type: Documentation
     url: https://platform.stepfun.com/docs/zh/api-reference/images/image
@@ -134,7 +206,12 @@ apis:
   description: Upload, list, retrieve, delete files and fetch file content for use with Step models and knowledge bases.
   humanURL: https://platform.stepfun.com/docs/zh/api-reference/files/create
   baseURL: https://api.stepfun.com
-  tags: [Files, Storage]
+  tags:
+  - File
+  - Storage
+  tags_raw:
+  - Files
+  - Storage
   properties:
   - type: Documentation
     url: https://platform.stepfun.com/docs/zh/api-reference/files/create
@@ -172,7 +249,12 @@ apis:
   description: Retrieve account information including balances (GET /v1/accounts).
   humanURL: https://platform.stepfun.com/docs/zh/api-reference/accounts/get
   baseURL: https://api.stepfun.com
-  tags: [Accounts, Billing]
+  tags:
+  - Account
+  - Billing
+  tags_raw:
+  - Accounts
+  - Billing
   properties:
   - type: Documentation
     url: https://platform.stepfun.com/docs/zh/api-reference/accounts/get
