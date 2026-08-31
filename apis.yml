@@ -45,11 +45,11 @@ modified: '2026-07-21'
 tags:
 - Artificial Intelligence
 - LLM
-- Multi-Modal
+- Multimodal
 - Chat Completion
 - Audio
 - Speech
-- Text-to-Speech
+- Text to Speech
 - Speech Recognition
 - Image
 - Real-Time
@@ -84,7 +84,7 @@ apis:
   - Artificial Intelligence
   - LLM
   - Chat Completion
-  - Multi-Modal
+  - Multimodal
   - Tool Calling
   tags_raw:
   - AI
@@ -160,7 +160,7 @@ apis:
   baseURL: https://api.stepfun.com
   tags:
   - Audio
-  - Text-to-Speech
+  - Text to Speech
   - Speech Recognition
   - Voice Cloning
   tags_raw:
