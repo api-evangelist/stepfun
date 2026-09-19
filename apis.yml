@@ -48,7 +48,7 @@ tags:
 - Artificial Intelligence
 - LLM
 - Multi-Modal
-- Chat Completion
+- Chat Completions
 - Audio
 - Speech
 - Text-to-Speech
@@ -85,7 +85,7 @@ apis:
   tags:
   - Artificial Intelligence
   - LLM
-  - Chat Completion
+  - Chat Completions
   - Multi-Modal
   - Tool Calling
   tags_raw:
