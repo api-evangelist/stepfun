@@ -205,12 +205,13 @@ apis:
   baseURL: https://api.stepfun.com
   tags:
   - Image
-  - Image-Generation
+  - Image Generation
   - Image Editing
   tags_raw:
   - Images
   - Image Generation
   - Image Editing
+  - Image-Generation
   properties:
   - type: Documentation
     url: https://platform.stepfun.com/docs/zh/api-reference/images/image
