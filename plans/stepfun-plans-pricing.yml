@@ -1,0 +1,212 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://platform.stepfun.com/docs/zh/guides/pricing/details
+sources:
+- https://platform.stepfun.com/docs/zh/guides/pricing/details
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T104522
+  grounding: every price_text was found verbatim in the fetched page text
+audience: developer-api
+pricing_basis: per-call
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-07'
+published: true
+note: 中文定价明细页，含按token、字符、音频时长、张数计费及阶梯限速；企业账户限速需联系商务。
+plan_count: 29
+currency: CNY
+plans:
+- name: step-5-preview
+  price_text: 7 元
+  price: 7
+  currency: CNY
+  period: per-use
+  unit: 1M tokens
+  included_quota: 输入价格（缓存未命中）
+  overage: 输入价格（缓存命中）0.35 元；输出价格 20 元
+- name: step-3.7-flash
+  price_text: 1.35 元
+  price: 1.35
+  currency: CNY
+  period: per-use
+  unit: 1M tokens
+  included_quota: 输入价格（缓存未命中）
+  overage: 缓存命中 0.27 元；输出 8.1 元
+- name: step-3.5-flash
+  price_text: 0.7 元
+  price: 0.7
+  currency: CNY
+  period: per-use
+  unit: 1M tokens
+  included_quota: 输入（缓存未命中）
+  overage: 缓存命中 0.14 元；输出 2.1 元
+- name: step-3.5-flash-2603
+  price_text: 0.7 元
+  price: 0.7
+  currency: CNY
+  period: per-use
+  unit: 1M tokens
+  included_quota: 输入（缓存未命中）
+  overage: 缓存命中 0.14 元；输出 2.1 元
+- name: step-1o-turbo-vision
+  price_text: 2.5 元
+  price: 2.5
+  currency: CNY
+  period: per-use
+  unit: 1M tokens
+  included_quota: 输入（缓存未命中）
+  overage: 缓存命中 0.5 元；输出 8 元
+- name: stepaudio-2.5-realtime
+  price_text: 10 元
+  price: 10
+  currency: CNY
+  period: per-use
+  unit: 1M tokens
+  included_quota: 输入（缓存未命中）
+  overage: 缓存命中 2 元；输出 70 元
+- name: stepaudio-2.5-chat
+  price_text: 10 元
+  price: 10
+  currency: CNY
+  period: per-use
+  unit: 1M tokens
+  included_quota: 输入（缓存未命中）
+  overage: 缓存命中 2 元；输出 25 元
+- name: step-1o-audio
+  price_text: 25 元
+  price: 25
+  currency: CNY
+  period: per-use
+  unit: 1M tokens
+  included_quota: 输入（缓存未命中）
+  overage: 缓存命中 5 元；输出 60 元
+- name: step-audio-2
+  price_text: 10 元
+  price: 10
+  currency: CNY
+  period: per-use
+  unit: 1M tokens
+  overage: 缓存命中 2 元；输出 70 元
+- name: step-audio-r1.5
+  price_text: 10 元
+  price: 10
+  currency: CNY
+  period: per-use
+  unit: 1M tokens
+  overage: 缓存命中 2 元；输出 105 元
+- name: stepaudio-3-realtime-preview
+  price_text: 限时免费
+  period: per-use
+- name: stepaudio-3-chat-preview
+  price_text: 限时免费
+  period: per-use
+- name: stepaudio-3-tts
+  price_text: 2.5 元 / 万字符
+  price: 2.5
+  currency: CNY
+  period: per-use
+  unit: 万字符
+- name: stepaudio-2.5-tts
+  price_text: 5.8 元/万字符
+  price: 5.8
+  currency: CNY
+  period: per-use
+  unit: 万字符
+- name: step-tts-2
+  price_text: 2.8 元/万字符
+  price: 2.8
+  currency: CNY
+  period: per-use
+  unit: 万字符
+- name: step-tts-mini
+  price_text: 0.9 元/万字符
+  price: 0.9
+  currency: CNY
+  period: per-use
+  unit: 万字符
+- name: 语音复刻
+  price_text: 9.9 元/音色
+  price: 9.9
+  currency: CNY
+  period: per-use
+  unit: 音色
+- name: stepaudio-3-asr-max
+  price_text: 2.8 元 / 小时
+  price: 2.8
+  currency: CNY
+  period: per-use
+  unit: 小时
+- name: stepaudio-2.5-asr
+  price_text: 0.15 元/小时
+  price: 0.15
+  currency: CNY
+  period: per-use
+  unit: 小时
+- name: stepaudio-2.5-asr-stream
+  price_text: 1.2 元/小时
+  price: 1.2
+  currency: CNY
+  period: per-use
+  unit: 小时
+- name: stepaudio-2-asr-pro
+  price_text: 2 元/小时
+  price: 2
+  currency: CNY
+  period: per-use
+  unit: 小时
+- name: step-asr
+  price_text: 0.9 元/小时
+  price: 0.9
+  currency: CNY
+  period: per-use
+  unit: 小时
+- name: step-asr-1.1
+  price_text: 2.2 元/小时
+  price: 2.2
+  currency: CNY
+  period: per-use
+  unit: 小时
+- name: step-asr-1.1-stream
+  price_text: 2.6 元/小时
+  price: 2.6
+  currency: CNY
+  period: per-use
+  unit: 小时
+- name: step-2x-large
+  price_text: 0.1 元
+  price: 0.1
+  currency: CNY
+  period: per-use
+  unit: 1 张
+- name: step-image-edit-2
+  price_text: 0.02 元
+  price: 0.02
+  currency: CNY
+  period: per-use
+  unit: 1 张
+- name: 互联网搜索
+  price_text: 0.04 元
+  price: 0.04
+  currency: CNY
+  period: per-use
+  unit: 1 次
+- name: 文搜图
+  price_text: 0.12 元
+  price: 0.12
+  currency: CNY
+  period: per-use
+  unit: 1 次
+- name: 文件存储
+  price_text: 0.5 元/GB/天
+  price: 0.5
+  currency: CNY
+  period: per-use
+  unit: GB/天
+rate_limit_statements:
+- V1 ¥100 – ¥499 20 400 2,000,000
+- V2 ¥500 – ¥1,999 30 600 3,000,000
+- V3 ¥2,000 – ¥9,999 40 800 4,000,000
+- V4 ¥10,000 及以上 130 2,600 13,000,000
